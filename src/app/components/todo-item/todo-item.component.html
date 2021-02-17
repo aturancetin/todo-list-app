@@ -1,0 +1,23 @@
+<div class="todoItem">
+    <p class="idColumn">
+        {{todo.id}}
+    </p>
+    <p class="titleColumn">
+        {{todo.title}}
+    </p>
+    <p class="assigneeColumn">
+        {{todo.assignee}}
+    </p>
+    <div class="statusColumn center">
+        <p class="done center" *ngIf="todo.completed">DONE</p>
+        <p class="progress center" *ngIf="!todo.completed">IN PROGRESS</p>
+    </div>
+    <div class="actionsColumn">
+        <button class="editButton" (click)="onControlModal()">Edit</button>
+        <button class="deleteButton" (click)="onDelete(todo)" >Delete</button>
+    </div>
+    <div *ngIf="modal" class="modal">
+        <app-edit-modal (closeModalEvent)="closeModal($event)" (saveChangesEvent)="saveChanges($event)" [todo]="todo" ></app-edit-modal>
+    </div>
+    
+</div>

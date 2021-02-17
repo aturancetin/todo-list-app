@@ -1,0 +1,114 @@
+@import
+    "colors",
+    "breakpoints",
+    "sizes"
+;
+
+.todoItem {
+    display: flex;
+    justify-content: space-between;
+    height: $row-height;
+    font-size: 1.2em;
+    height: 2.3em;
+    align-items: center;
+    padding-inline: 2em;
+    background-color: white;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.idColumn {
+    width: $id-column;
+}
+
+.titleColumn {
+    width: $title-column;
+}
+
+.assigneeColumn {
+    width: $assignee-column;
+}
+
+.statusColumn {
+    width: $status-column;
+    font-size: .8em;
+}
+
+.actionsColumn {
+    width: $actions-column;
+    display: flex;
+    justify-content: space-around;
+}
+
+.actionsColumn {
+    button {
+        width: $button-width;
+        height: $button-height;
+        cursor: pointer;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+.editButton {
+    background-color: $primary;
+}
+
+.deleteButton {
+    background-color: $alert;
+}
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+}
+
+.done {
+    width: 8em;
+    background-color: $completed-bg;
+    color: $completed;
+    border: 1px solid $completed;
+    border-radius: 5px;
+}
+
+.progress {
+    width: 8em;
+    background-color: $progress-bg;
+    color: $progress;
+    border: 1px solid $progress;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: $on-mobile) {
+    .todoItem {
+        height: $row-height-mobile;
+        padding-inline: .5em;
+    }
+    .actionsColumn {
+        flex-direction: column;
+        align-items: center;
+        button {
+            height: $button-height-mobile;
+            margin-top: .2em;
+        }
+    }
+    .actionsColumn {
+        width: $actions-column-mobile;
+    }
+    .statusColumn {
+        width: $status-column-mobile;
+    }
+    .titleColumn {
+        width: $title-column-mobile;
+    }
+    .assigneeColumn {
+        width: $assignee-column-mobile;
+    }
+}
