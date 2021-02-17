@@ -1,0 +1,93 @@
+@import
+    "colors",
+    "breakpoints",
+    "sizes"
+;
+
+
+.todoListContainer {
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.todoListTitles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+    background-color: #F4F4FB;
+    padding-inline: 2em;
+    color: $header;
+    border-radius: 20px 20px 0 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+
+.idColumn {
+    width: $id-column;
+}
+
+.titleColumn {
+    width: $title-column;
+}
+
+.assigneeColumn {
+    width: $assignee-column;
+}
+
+.statusColumn {
+    width: $status-column;
+    cursor: pointer;
+}
+
+.actionsColumn {
+    width: $actions-column;
+}
+
+.paginationControl {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    background-color: #F4F4FB;
+    border-radius: 0 0 20px 20px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.icon {
+    margin-left: 1em;
+}
+
+.lottie {
+    height: 30em;
+    width: 100%;
+    background-color: white;
+}
+
+@media screen and (max-width: $on-mobile) {
+    .todoListContainer {
+        width: 90%;
+        margin-top: 1em;
+    }
+    
+    .statusColumn {
+        width: $status-column-mobile;
+    }
+    .titleColumn {
+        width: $title-column-mobile;
+    }
+    .assigneeColumn {
+        width: $assignee-column-mobile;
+    }
+    .actionsColumn {
+        width: $actions-column-mobile;
+    }
+}

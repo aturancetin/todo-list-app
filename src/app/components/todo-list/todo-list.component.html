@@ -1,0 +1,22 @@
+<div class="todoListContainer">
+    <div class="todoListTitles">
+        <h3 class="idColumn ">#</h3>
+        <h3 class="titleColumn ">Title</h3>
+        <h3 class="assigneeColumn ">Assignee </h3>
+        <h3 class="statusColumn center" (click)="setStatus()">Status  <p class="icon" [ngClass]="{'rotate': order }">v</p></h3>
+        <div class="actionsColumn center"><h3>Actions</h3></div>
+    </div>
+    <div class="lottie" *ngIf="!todos">
+        <app-loading-lottie></app-loading-lottie>
+    </div>
+    <app-todo-item 
+            *ngFor="let todo of todos | paginate: { itemsPerPage: 10, currentPage: p }" 
+            [todo] ="todo"
+            (deleteTodo)="deleteTodo($event)"
+            (updateTodos)="updateTodos($event)" >
+    </app-todo-item>
+    <div class="paginationControl">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    
+</div>
