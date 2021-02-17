@@ -1,27 +1,16 @@
 # TodoListApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
+The aim of this project is to set up an Angular web application that can connect to a remote REST API, fetch data to the UI and update UI according to some set of user interactions. This project was generated with Angular CLI version 11.1.3.
 
 ## Development server
 
+Run `npm install` to install all packages and dependencies this project has to your local machine.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Workflow
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+When the project is initialized, it fectches todos from https://jsonplaceholder.typicode.com/todos API endpoint.
+JSONPlaceholder REST API also has a users endpoint which is https://jsonplaceholder.typicode.com/users. 
+By combining these two endpoints, a table consists  of a list of todos and their corresponding users is created.
+When status button is clicked, user can change the order of the list between ascending and descending orders.
+When user click edit a edit modal opens and user can edit todo's title and status. When user click save todo's infromation changes.
