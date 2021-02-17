@@ -1,0 +1,87 @@
+@import
+    "colors",
+    "breakpoints",
+    "sizes"
+;
+
+.closeModal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: .5;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 10em;
+    width: 40em;
+    margin-top: -5em; // half of the height
+    margin-left: -20em; // half of the width
+    z-index: 3;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.is-complete {
+    text-decoration: line-through;
+}
+
+.completeCheck {
+    display: flex;
+    align-items: center;
+    height: $button-height;
+}
+
+
+
+.titleInput {
+    height: $button-height;
+    width: 100%;
+    padding-inline: 1em;
+}
+
+.buttons {
+    align-self: flex-end;
+}
+
+.buttons {
+    input, button {
+        width: $button-width;
+        height: $button-height;
+        cursor: pointer;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 1em;
+    }
+}
+
+.closeButton {
+    background-color: $alert;
+    width: $button-width;
+}
+
+.submitButton {
+    background-color: $primary;
+    width: $button-width;
+}
+
+@media screen and (max-width: $on-mobile) {
+    .modal {
+        width: 24em;
+        height: 12em;
+        margin-top: -6em; // half of the height
+        margin-left: -12em; // half of the width
+        padding: 1em 2em 1em 2em;
+    }
+}

@@ -1,0 +1,19 @@
+
+    <form class="modal" (ngSubmit)="saveChanges()" >
+        <h3>Title</h3>
+        <input class="titleInput" [(ngModel)]="newTodo!.title" name="title">
+        <div class="completeCheck">
+            <input type="checkbox" [(ngModel)]="newTodo!.completed" value="{{todo?.completed}}" [checked]="todo?.completed" name="completed" >
+            <p style="margin-left: 1em;" [ngClass]="{ 'is-complete': newTodo?.completed}" >Completed</p>
+        </div>
+        <div class="buttons">
+            <button class="submitButton" type="submit" >Save</button>
+            <button class="closeButton" (click)="closeModal(false)">Cancel</button>
+        </div>
+        
+    </form>
+<div class="closeModal" (click)="closeModal(false)"></div>
+
+
+
+
