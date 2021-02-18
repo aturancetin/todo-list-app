@@ -20,7 +20,6 @@ export class EditModalComponent implements OnInit {
     this.newTodo = {
       ...this.todo
     }
-  
   }
 
   closeModal(close:boolean) {

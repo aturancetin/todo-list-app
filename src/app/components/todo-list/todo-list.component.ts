@@ -63,11 +63,7 @@ export class TodoListComponent implements OnInit {
     };
 
     // Sort updated todos if necessary (order !== undefined)
-
-    if(this.order === true ) this.sortAscending(this.todos); 
-      
-    else if(this.order === false) this.sortDescending(this.todos);
-      
+    this.order === true ? this.sortAscending(this.todos) : this.order === false ? this.sortDescending(this.todos) : '';
   }
 
 
